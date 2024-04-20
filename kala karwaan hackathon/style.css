@@ -1,0 +1,120 @@
+body{
+    margin:0;
+    padding:0;
+    background:#e5e5e1;
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-image: "https://www.freepik.com/free-vector/white-abstract-background_11852428.htm#query=white%20pastel%20background&position=6&from_view=keyword&track=ais&uuid=f584ded4-99ed-4941-8410-184954ce25df";
+}
+.navbar {
+    height: 150px;
+    background-color: rgb(197, 202, 158);
+    width: auto;
+    justify-content: center;
+    align-content: center;
+}
+.navbar ul li a {
+    color: black; 
+    font-weight: bolder;
+}
+
+
+.navbar ul{
+  justify-content: center;
+padding:50px;
+margin-top:50px;
+
+text-align: center;
+}
+.navbar li{
+    
+    justify-content: center;
+    display:inline-block;
+    color:black;
+
+}
+.navbar a{
+    
+    text-decoration: none;
+    color:#0a0909;
+    width:100px;
+    display: block;
+    font-size:25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+
+
+}
+
+#home::before{ 
+    content: "";
+    position: absolute;
+    background: url('../bg1.jpg') no-repeat center center/cover;
+    height: 642px;
+    top:0px;
+    left:0px;
+    width: 100%;
+    z-index: -1;
+    opacity:0.89;
+}
+
+#home h1{
+    color:white;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+}
+
+/* Services Section */
+#services{
+    justify-content: center;
+    margin: 34px;
+    display: flex;
+}
+#services .box{ 
+    text-align: center;
+    align-items:center;
+    width: 500px;
+    height: auto;
+    border: 2px solid grey;
+    box-shadow: 8px 8px 5px grey;
+    padding: 34px;
+    margin: 2px 55px;
+    border-radius: 28px;
+    background: #f2f2f2;
+    margin-bottom: 20px;
+}
+
+
+#services .box img{ 
+    width: 100%;
+   height: auto;
+   margin: auto;
+   display: block;
+}
+
+#services .box p{
+    align-items: end;
+    font-family: 'Bree Serif', serif;
+
+} 
+
+
+.h-primary{
+     text-align: center;
+    color:black;
+}
+
+#home {
+    text-align: center; /* Aligning the text in the center */
+}
+
+#home .h-primary {
+    color: black; /* Setting the font color to black */
+    font-weight: bold; /* Making the font bold */
+}
+p{
+    text-align: center; /* Aligning the text in the center */
+    color: black; /* Setting the font color to black */
+    font-weight: bold; /* Making the font bold */
+
+}
