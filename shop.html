@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Listings</title>
+  <link rel="stylesheet" href="shop.css">
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<body>
+  <header>
+    <h2>Shop</h2>
+    <div class="header-icons">
+      <box-icon type='solid' name='user' style="margin-right: 20px;"></box-icon>
+      <box-icon type='solid' name='shopping-bag'></box-icon> <!-- Shopping bag icon -->
+    </div>
+  </header>   
+  <main>
+    <aside>
+      <h2>Filter by Category</h2>
+      <ul id="category-filter">
+        <li><button onclick="filterProducts('All')">All</button></li>
+        <li><button onclick="filterProducts('Art by Artist')">Art by Artist</button></li>
+        <li><button onclick="filterProducts('Indian Accessories')">Indian Accessories</button></li>
+        <li><button onclick="filterProducts('Indian Handicraft')">Indian Handicraft</button></li>
+        <li><button onclick="filterProducts('Traditional Clothing')">Traditional Clothing</button></li>
+        <li><button onclick="filterProducts('Made by Mud')">Made by Mud</button></li>
+        <li><button onclick="filterProducts('Others')">Others</button></li>
+      </ul>
+    </aside>
+    <section id="product-listings">
+      <div class="templates">
+        <!-- Art by Artist category -->
+        <div class="category-container">
+          <h2>Art by Artist</h2>
+          <!-- Product 1 -->
+          <div class="template" data-category="Art by Artist">
+            <div class="preview">
+              <img src="madhubani.jpeg" alt="Madhubani Painting 1">
+            </div>
+            <h3>Madhubani Painting</h3>
+            <p>Rs 5000</p> <!-- Price for Product 1 -->
+          </div>
+    
+          <!-- Product 2 -->
+          <div class="template" data-category="Art by Artist">
+            <div class="preview">
+              <img src="abstract.jpeg" alt="Madhubani Painting 2">
+            </div>
+            <h3>Abstract Painting</h3>
+            <p>Rs 2500</p> <!-- Price for Product 2 -->
+          </div>
+    
+          <!-- Product 3 -->
+          <div class="template" data-category="Art by Artist">
+            <div class="preview">
+              <img src="mandala.jpeg" alt="Madhubani Painting 3">
+            </div>
+            <h3>Mandala Painting</h3>
+            <p>Rs 3000</p> <!-- Price for Product 3 -->
+          </div>
+        </div>
+
+        <!-- Indian Accessories category -->
+        <div class="category-container">
+          <h2>Indian Accessories</h2>
+          <!-- Product 1 -->
+          <div class="template" data-category="Indian Accessories">
+            <div class="preview">
+              <img src="bangles.jpg" alt="Madhubani Painting 1">
+            </div>
+            <h3>Bangles</h3>
+            <p>Rs 250</p> <!-- Price for Product 1 -->
+          </div>
+    
+          <!-- Product 2 -->
+          <div class="template" data-category="Indian Accessories">
+            <div class="preview">
+              <img src="Jewellery-1.jpg" alt="Madhubani Painting 2">
+            </div>
+            <h3>Jewellery</h3>
+            <p>Rs 650</p> <!-- Price for Product 2 -->
+          </div>
+    
+          <!-- Product 3 -->
+          <div class="template" data-category="Indian Accessories">
+            <div class="preview">
+              <img src="purse.jpeg" alt="Madhubani Painting 3">
+            </div>
+            <h3>Purse</h3>
+            <p>Rs 200</p> <!-- Price for Product 3 -->
+          </div>   
+        </div>
+
+        <!-- Indian Handicraft category -->
+        <div class="category-container">
+          <h2>Indian Handicraft</h2>
+          <!-- Product 1 -->
+          <div class="template" data-category="Indian Handicraft">
+            <div class="preview">
+              <img src="dolls.jpeg" alt="Madhubani Painting 1">
+            </div>
+            <h3>Home Decor Dolls</h3>
+            <p>Rs 500</p> <!-- Price for Product 1 -->
+          </div>
+    
+          <!-- Product 2 -->
+          <div class="template" data-category="Indian Handicraft">
+            <div class="preview">
+              <img src="basket.jpeg" alt="Madhubani Painting 2">
+            </div>
+            <h3>Woven Basket</h3>
+            <p>Rs 65</p> <!-- Price for Product 2 -->
+          </div>
+    
+          <!-- Product 3 -->
+          <div class="template" data-category="Indian Handicraft">
+            <div class="preview">
+              <img src="utensils.jpeg" alt="Madhubani Painting 3">
+            </div>
+            <h3>Utensils</h3>
+            <p>Rs 600</p> <!-- Price for Product 3 -->
+          </div>    
+        </div>
+
+        <!-- Traditional Clothing category -->
+        <div class="category-container">
+          <h2>Traditional Clothing</h2>
+          <!-- Product 1 -->
+          <div class="template" data-category="Traditional Clothing">
+            <div class="preview">
+              <img src="kurti.webp" alt="Madhubani Painting 1">
+            </div>
+            <h3>Chikankari Kurti</h3>
+            <p>Rs 500</p> <!-- Price for Product 1 -->
+          </div>
+    
+          <!-- Product 2 -->
+          <div class="template" data-category="Traditional Clothing">
+            <div class="preview">
+              <img src="dhotikurta.webp" alt="Madhubani Painting 2">
+            </div>
+            <h3>Dhoti Kurta</h3>
+            <p>Rs 450</p> <!-- Price for Product 2 -->
+          </div>
+    
+          <!-- Product 3 -->
+          <div class="template" data-category="Traditional Clothing">
+            <div class="preview">
+              <img src="lehenga.jpg" alt="Madhubani Painting 3">
+            </div>
+            <h3>Rajasthani Dress</h3>
+            <p>Rs 900</p> <!-- Price for Product 3 -->
+          </div>    
+        </div>
+
+        <!-- Made by Mud category -->
+        <div class="category-container">
+          <h2>Made by Mud</h2>
+          <!-- Product 1 -->
+          <div class="template" data-category="Made by Mud">
+            <div class="preview">
+              <img src="pot.jpeg" alt="Madhubani Painting 1">
+            </div>
+            <h3>Pottery</h3>
+            <p>Rs 150</p> <!-- Price for Product 1 -->
+          </div>
+    
+          <!-- Product 2 -->
+          <div class="template" data-category="Made by Mud">
+            <div class="preview">
+              <img src="diya.jpg" alt="Madhubani Painting 2">
+            </div>
+            <h3>Diya</h3>
+            <p>Rs 70</p> <!-- Price for Product 2 -->
+          </div>
+    
+          <!-- Product 3 -->
+          <div class="template" data-category="Made by Mud">
+            <div class="preview">
+              <img src="claycraft.webp" alt="Madhubani Painting 3">
+            </div>
+            <h3>Ganesha Idol</h3>
+            <p>Rs 450</p> <!-- Price for Product 3 -->
+          </div>    
+        </div>
+
+        <!-- Others -->
+        <div class="category-container">
+          <h2>Others</h2>
+          <!-- Product 1 -->
+          <div class="template" data-category="Others">
+            <div class="preview">
+              <img src="bedsheet.jpeg" alt="Madhubani Painting 1">
+            </div>
+            <h3>Embroidered Bedsheet</h3>
+            <p>Rs 650</p> <!-- Price for Product 1 -->
+          </div>
+    
+          <!-- Product 2 -->
+          <div class="template" data-category="Others">
+            <div class="preview">
+              <img src="cushion.jpeg" alt="Madhubani Painting 2">
+            </div>
+            <h3>Cushion Cover</h3>
+            <p>Rs 300</p> <!-- Price for Product 2 -->
+          </div>
+    
+          <!-- Product 3 -->
+          <div class="template" data-category="Others">
+            <div class="preview">
+              <img src="jutti.webp" alt="Madhubani Painting 3">
+            </div>
+            <h3>Punjabi Jutti</h3>
+            <p>Rs 200</p> <!-- Price for Product 3 -->
+          </div>    
+        </div>
+      </div>
+    </section>   
+    
+    </section>
+  </main>
+  <script src="shop.js"></script>
+</body>
+</html>

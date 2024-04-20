@@ -1,0 +1,115 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background: #e5e5e1;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS */
+header {
+  background-color: rgb(184, 197, 82);
+  color: #fff;
+  padding: 20px;
+  position: relative; /* Add position relative to the header */
+}
+
+.header-icons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px; /* Adjust as needed */
+}
+
+.header-icons button {
+  margin-right: 10px;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+aside {
+  width: 20%;
+}
+
+section {
+  width: 75%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  background-color: #f4f4f4;
+  border: none;
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.product-card img {
+  max-width: 100%;
+}
+
+.product-card h3 {
+  margin-top: 10px;
+}
+
+.preview img {
+  max-width: 100%;
+  height: auto;
+}
+
+.templates {
+  font-size: 0; /* Fix inline-block spacing issue */
+  margin: 0 -10px; /* Add negative margin to counteract the inline-block gap */
+}
+
+.template {
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: calc(25% - 20px); /* Each product takes 25% width with some margin */
+  max-width: calc(25% - 20px); /* Each product takes 25% width with some margin */
+  vertical-align: top; /* Align products at the top */
+  font-size: initial; /* Reset font size */
+}
+
+
+.template:last-child {
+  margin-right: 0; /* Remove margin from the last product in the row */
+}
+
+
+/* Additional styling for product titles */
+.template h3 {
+  margin-top: 10px;
+}
+
+.template h2 {
+  margin-top: 10px;
+}
+
+
+
