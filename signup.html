@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-    <title>Sign In and Sign Up Form</title>
-    <link rel = "stylesheet" href = "signup.css">
-    <script src="https://kit.fontawesome.com/be107114f4.js" crossorigin="anonymous"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
 </head>
 <body>
 <div class="container">
     <div class="form-box">
-         <h1>Sign Up</h1>
-         <form>
-             <div class = "input-group">
-                 <div class = "input-field">
-                      <i class="fa-solid fa-user"></i>
-                      <input type="text" placeholder="Name">
-                 </div> 
+        <h1>Sign Up</h1>
+        <form>
+            <div class="input-group">
+                <div class="input-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="name" placeholder="Name">
+                </div>
 
-		 <div class = "input-field">
- 		      <i class="fa-solid fa-envelope"></i> 
-		      <input type="email" placeholder="Email">
-	         </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email">
+                </div>
 
-		 <div class = "input-field">
-		      <i class="fa-solid fa-lock"></i>
-		      <input type="password" placeholder="Password">
-	         </div>
-                 <p>Already have an account? <a href="http://127.0.0.1:5500/login.html">Log In</a></p>
-	     </div>
-	     <div class="btn-field">
-	         <button type="button" id="signupBtn">Create Account</button>
-	     </div>
-         </form>
-      </div>
-   </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <p>Already have an account? <a href="login.html">Log In</a></p>
+                <div class="btn-field">
+                    <button type="button" id="signupBtn">Create Account</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAzeZ6YuDq75pU2423Cn__MnZy6KO6wEDA",
+        authDomain: "osdc-44143.firebaseapp.com",
+        projectId: "osdc-44143",
+        storageBucket: "osdc-44143.appspot.com",
+        messagingSenderId: "95447495953",
+        appId: "1:95447495953:web:4bbe5e6ef137c3777208b0"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    document.getElementById("signupBtn").addEventListener('click', function(e){
+        set(ref(db, 'user/' + document.getElementById("name").value), {
+            username: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value
+        });
+        alert("User created");
+    });
+</script>
 </body>
 </html>
