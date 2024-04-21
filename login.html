@@ -1,14 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="login.css">
-    <script src="https://kit.fontawesome.com/be107114f4.js" crossorigin="anonymous"></script>
-    <style>
-       
-    </style>
 </head>
 <body>
     <div class="container">
@@ -18,20 +13,60 @@
                 <div class="input-group">
                     <div class="input-field">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="Email">
+                        <input type="email" id="email" placeholder="Email">
                     </div>
 
                     <div class="input-field">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Password">
+                        <input type="password" id="password" placeholder="Password">
                     </div>
+
                 </div>
                 <div class="btn-field">
                     <button type="button" id="loginBtn">Log In</button>
                 </div>
             </form>
-            <p class="create-account">Don't have an account? <a href="http://127.0.0.1:5500/signup.html">Create Account</a></p>
+            <p class="create-account">Don't have an account? <a href="signup.html">Create Account</a></p>
         </div>
     </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAzeZ6YuDq75pU2423Cn__MnZy6KO6wEDA",
+            authDomain: "osdc-44143.firebaseapp.com",
+            projectId: "osdc-44143",
+            storageBucket: "osdc-44143.appspot.com",
+            messagingSenderId: "95447495953",
+            appId: "1:95447495953:web:4bbe5e6ef137c3777208b0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.getElementById("loginBtn").addEventListener("click", function() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+                    console.log("User logged in:", user);
+                    // Redirect to shop.html or perform any other actions
+                    window.location.href = "shop.html";
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.error("Login error:", errorMessage);
+                    // Display error message to the user
+                    alert(errorMessage);
+                });
+        });
+    </script>
 </body>
 </html>
